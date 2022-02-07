@@ -2,11 +2,18 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 body {
     background-color: white;
     text-align: center;
     list-style-position: inside;
     font-family: Helvetica, sans-serif;
+    height: 100vh;
 }
 
 h1 {
@@ -27,6 +34,52 @@ h2 {
 
 p ul li {
     font-size: 1rem;
+    font-family: Helvetica, sans-serif
+}
+
+.card-container {
+    background: blue;
+    width: 640px;
+    height: 640px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    perspective: 1000px;
+}
+
+.flip-card {
+    display: flex;
+    justify-content: center;
+    width: 10.5%;
+    height: 25%;
+    margin: 5px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+
+.front-face, .back-face {
+    width: 80px;
+    height: 100px;
+    padding: 2px;
+    position: absolute;
+    border-radius: 5px;
+    background: pink;
+    backface-visibility: hidden;
+}
+
+.front-face {
+    transform: rotateY(180deg);
+}
+
+.flip-card:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+}
+
+.flip-card.flip {
+    transform: rotateY(180deg);
 }
 
 /* get rid of background color later
@@ -44,13 +97,13 @@ p ul li {
     grid-gap: 15px; 
 } */
 
-.card-container {
+/* .card-container {
     display: inline-grid;
     background-color: pink;
-    grid-template-columns: /*repeat(7, 1fr) minmax(200px, 1fr); */
+    grid-template-columns:
     auto auto auto auto auto auto auto auto; 
     grid-gap: 2rem;
-  }
+  } */
 
 /* .flip-card {
     display: grid;
@@ -62,13 +115,14 @@ p ul li {
     background-color: hotpink;
 } */
 
-/* change background color to transparent later */
+/* change background color to transparent later
 .flip-card {
     height: 100px;
     width: 80px;
     border: 2px solid black;
     background-color: transparent;
     perspective: 1000px;
+    background-image: url("./images/baby-yoda-card-face.png")
 }
 
 .flip-card-outer {
@@ -102,7 +156,7 @@ p ul li {
 #card {
     width: 80px;
     height: 100px;
-}
+} */
 
 button {
     /* center button */

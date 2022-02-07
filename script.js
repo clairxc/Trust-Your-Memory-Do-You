@@ -1,37 +1,69 @@
-// make divs into an array
+// flip the cards
+const cards = document.querySelectorAll('.flip-card')
 
-
-
-// shuffle the cards
-function shuffle(elems) {
- 
-    allElems = (function(){
-	var ret = [], l = elems.length;
-	while (l--) { ret[ret.length] = elems[l]; }
-	return ret;
-    })();
- 
-    var shuffled = (function(){
-        var l = allElems.length, ret = [];
-        while (l--) {
-            var random = Math.floor(Math.random() * allElems.length),
-                randEl = allElems[random].cloneNode(true);
-            allElems.splice(random, 1);
-            ret[ret.length] = randEl;
-        }
-        return ret; 
-    })(), l = elems.length;
- 
-    while (l--) {
-        elems[l].parentNode.insertBefore(shuffled[l], elems[l].nextSibling);
-        elems[l].parentNode.removeChild(elems[l]);
-    }
- 
+function flipCard() {
+    this.classList.toggle("flip")
 }
+cards.forEach((card) => card.addEventListener("click",flipCard))
 
-let button = document.querySelector('button')
 
-button.addEventListener('click', function() { shuffle(document.querySelectorAll('#shuffle > div') ) }, false);
+
+// // make divs into an array
+// let divArray = Array.from(document.querySelectorAll('.flip-card'))
+
+// let shuffleArray = (divArray) => {
+//     for (let i = divArray.length - 1; i > 0; i--) {
+//         const j = Math.floor(Math.random() * (i + 1));
+//         const temp = divArray[i];
+//         divArray[i] = divArray[j];
+//         divArray[j] = temp;
+//     }
+// }
+
+// let newArr = []
+// const reverseArray = (arr) => {
+//     for(let i = arr.length - 1; i >= 0; i--) {
+//         newArr.push(arr[i])
+//     }
+//     return newArr
+// }
+
+// console.log(reverseArray(divArray))
+
+// // shuffle the cards *this works
+// const shuffle = (elems) => {
+ 
+//     allElems = (function(){
+// 	let divArray = [], i = elems.length
+// 	while (i--){
+//         divArray[divArray.length] = elems[i] 
+//     }
+// 	return divArray;
+//     })()
+ 
+//     let shuffled = (function(){
+//         let i = allElems.length, divArray = []
+//         while (i--) {
+//             let random = Math.floor(Math.random() * allElems.length),
+//                 randEl = allElems[random].cloneNode(true)
+//             allElems.splice(random, 1)
+//             divArray[divArray.length] = randEl
+//         }
+//         return divArray
+//     })(), i = elems.length
+ 
+//     while (i--) {
+//         elems[i].parentNode.insertBefore(shuffled[i], elems[i].nextSibling)
+//         elems[i].parentNode.removeChild(elems[i])
+//     }
+// }
+
+// // shuffle button shuffles
+// let button = document.querySelector('button')
+
+// button.addEventListener('click', function() {
+//     shuffleArray(document.querySelectorAll('#shuffle > div'))
+// }, false)
 
 
 
@@ -81,7 +113,9 @@ button.addEventListener('click', function() { shuffle(document.querySelectorAll(
 //     return divArray
 // }
 
-
+// let divArray = Array.from(document.querySelectorAll('#shuffle'))
+// shuffle(divArray)
+// console.log(divArray)
 
 
 
