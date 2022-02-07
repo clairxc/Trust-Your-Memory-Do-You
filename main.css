@@ -29,7 +29,7 @@ p ul li {
     font-size: 1rem;
 }
 
-/* get rid of background color later */
+/* get rid of background color later
 .card-container {
     display: grid;
     grid-gap: 5px 20px;
@@ -41,11 +41,18 @@ p ul li {
     grid-template-columns: repeat(7, 1fr) minmax(200px, 1fr);
     overflow: hidden;
     grid-template-rows: repeat(4, 1fr);
-    grid-gap: 15px; */
-}
+    grid-gap: 15px; 
+} */
 
+.card-container {
+    display: inline-grid;
+    background-color: pink;
+    grid-template-columns: /*repeat(7, 1fr) minmax(200px, 1fr); */
+    auto auto auto auto auto auto auto auto; 
+    grid-gap: 2rem;
+  }
 
-/* .cards {
+/* .flip-card {
     display: grid;
     grid-gap: 5px 20px;
     grid-template-columns: auto auto auto auto auto auto auto auto;
@@ -57,9 +64,6 @@ p ul li {
 
 /* change background color to transparent later */
 .flip-card {
-    display: inline-grid;
-    grid-gap: 5px 20px;
-    grid-template-columns: auto auto auto auto auto auto auto auto;
     height: 100px;
     width: 80px;
     border: 2px solid black;
@@ -71,11 +75,11 @@ p ul li {
     position: relative;
     width: 80px;
     height: 100px;
-    transition: transform 0.6s;
+    transition: transform 0.8s;
     transform-style: preserve-3d;
 }
 
-.flip-card:hover .flip-card-inner {
+.flip-card:hover .flip-card-outer {
     transform: rotateY(180deg);
 }
 
@@ -83,11 +87,16 @@ p ul li {
     position: absolute;
     width: 80px;
     height: 100px;
-    backface-visibility: hidden;
+    backface-visibility: visible;
+}
+
+.flip-card-back {
+    background-color: transparent;
 }
 
 .flip-card-front {
-    background-color: white;
+    background-color: transparent;
+    transform: rotateY(180deg);
 }
 
 #card {
