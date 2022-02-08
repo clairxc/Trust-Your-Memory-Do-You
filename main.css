@@ -82,6 +82,18 @@ p ul li {
     transform: rotateY(180deg);
 }
 
+.card-container .flip-card .match {
+    backface-visibility: visible;
+}
+
+.flip-card.unmatched {
+    backface-visibility: hidden;
+}
+
+.flip-card.disabled {
+    pointer-events: none;
+}
+
 /* get rid of background color later
 .card-container {
     display: grid;

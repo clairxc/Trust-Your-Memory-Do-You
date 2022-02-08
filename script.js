@@ -1,5 +1,5 @@
-// flip the cards
-const cards = document.querySelectorAll('.flip-card')
+// // flip the cards using toggle
+let cards = document.querySelectorAll('.flip-card')
 
 function flipCard() {
     this.classList.toggle("flip")
@@ -8,137 +8,120 @@ cards.forEach((card) => card.addEventListener("click",flipCard))
 
 
 
-// // make divs into an array
-// let divArray = Array.from(document.querySelectorAll('.flip-card'))
+// // don't let card flip back once flipped
+function stopFlip() {
+    this.classList.toggle("disabled")
+}
+cards.forEach((card) => card.addEventListener("click", stopFlip))
 
-// let shuffleArray = (divArray) => {
-//     for (let i = divArray.length - 1; i > 0; i--) {
-//         const j = Math.floor(Math.random() * (i + 1));
-//         const temp = divArray[i];
-//         divArray[i] = divArray[j];
-//         divArray[j] = temp;
-//     }
-// }
 
-// let newArr = []
-// const reverseArray = (arr) => {
-//     for(let i = arr.length - 1; i >= 0; i--) {
-//         newArr.push(arr[i])
-//     }
-//     return newArr
-// }
 
-// console.log(reverseArray(divArray))
 
-// // shuffle the cards *this works
-// const shuffle = (elems) => {
- 
-//     allElems = (function(){
-// 	let divArray = [], i = elems.length
-// 	while (i--){
-//         divArray[divArray.length] = elems[i] 
-//     }
-// 	return divArray;
-//     })()
- 
-//     let shuffled = (function(){
-//         let i = allElems.length, divArray = []
-//         while (i--) {
-//             let random = Math.floor(Math.random() * allElems.length),
-//                 randEl = allElems[random].cloneNode(true)
-//             allElems.splice(random, 1)
-//             divArray[divArray.length] = randEl
-//         }
-//         return divArray
-//     })(), i = elems.length
- 
-//     while (i--) {
-//         elems[i].parentNode.insertBefore(shuffled[i], elems[i].nextSibling)
-//         elems[i].parentNode.removeChild(elems[i])
-//     }
-// }
+// // shuffle the cards
+function shuffle() {
+    cards.forEach((card) => {
+        let randomShuffle = Math.floor(Math.random() * 33)
+        card.style.order = randomShuffle
+    })
+} 
+shuffle()
 
 // // shuffle button shuffles
-// let button = document.querySelector('button')
+let button = document.querySelector('button')
 
-// button.addEventListener('click', function() {
-//     shuffleArray(document.querySelectorAll('#shuffle > div'))
-// }, false)
+button.addEventListener('click', function() {
+    shuffle(cards)
+}, false)
 
 
 
-// let shuffle1 = (arr) => {
-//     for (i = 0; i < array.length; i++) {
-//         x = Math.floor(Math.random() * array.length)
-//         y = Math.floor(Math.random() * array.length)
-//         if (x === y) {
-//             continue
-//         }
-//         temp0 = array[x]
-//         array[x] = array[y]
-//         array[y] = temp0
+
+
+// // let only two cards be flipped over at one time
+
+
+
+
+
+// // see if flipped cards are a match
+// check if cards are match or not
+// try using .isEqualNode()
+// data attributes
+
+function checkForMatch() {
+    if(cards.dataset.image === cards.dataset.image) {
+        disableCards()
+        return
+    }
+    unFlipCards()
+}
+
+function disableCards() {
+    cards.removeEventListener('click', flipCard)
+    cards.removeEventListener('click', flipCard)
+}
+
+function unflipCards() {
+    setTimeout(() => {
+        this.classList.remove('flip')
+        this.classList.remove('flip')
+    }, 1500)
+}
+
+// cards.forEach((card) => card.addEventListener('click', flipCard))
+
+
+  
+  // for when cards match
+
+  
+  // for when cards don't match
+
+  
+  // disable cards temporarily
+
+  
+  //enable cards and disable matched cards
+
+
+
+
+
+
+
+// let cardsChosen = []
+// let cardsChosenId = []
+// let cardsWon = []
+
+// function checkForMatch() {
+//     const optionOneId = cardsChosenId[0]
+//     const optionTwoId = cardsChosenId[1]
+
+//     if(optionOneId === optionTwoId) {
+//         cards[optionOneId].setAttribute('src', 'images/akbar.jpg')
+//         cards[optionTwoId].setAttribute('src', 'images/akbar.jpg')
+//         cards[optionOneId].removeEventListener('click', flipCard)
+//         cards[optionTwoId].removeEventListener('click', flipCard)
+//         cardsWon.push(cardsChosen)
+//     } else if (cardsChosen[0] === cardsChosen[1]) {
+//         console.log('You found a match')
+//         cards[optionOneId].setAttribute('src', 'images/boba.jpg')
+//         cards[optionTwoId].setAttribute('src', 'images/boba.jpg')
+//         cards[optionOneId].removeEventListener('click', flipCard)
+//         cards[optionTwoId].removeEventListener('click', flipCard)
+//         cardsWon.push(cardsChosen)
+//     } else {
+//         cards[optionOneId].setAttribute('src', 'images/akbar.jpg')
+//         cards[optionTwoId].setAttribute('src', 'images/akbar.jpg')
+//         alert('Sorry, try again')
 //     }
-//     return arr
 // }
-// shuffle1(array)
 
-// function shuffle(array) {
-//     for (i = 0; i < array.length; i++) {
-//         let temp0 = array[Math.floor(Math.random() * array.length)];
-//         let temp1 = array[Math.floor(Math.random() * array.length)];
-//         console.log(temp0); // select random item work correctly
-//         console.log(temp1); // select random item work correctly
-//         if (temp0 === temp1) { //for dont change array[index] with save value!!!
-//             continue;
-//         }
-//         temp2 = temp0;
-//         temp0 = temp1;
-//         temp1 = temp2;
-//         console.log(temp0); 
-//         console.log(temp1); 
-//         console.log(temp2); 
+// function flippedCard() {
+//     if (cardsInPlay[0] === cardsInPlay[1]) {
+//         console.log('You found match')
+//     } else {
+//         console.log('Sorry, try again')
 //     }
-//     return array
 // }
-// shuffle()
-
-
-// const shuffle = (divArray) => {
-//     let currentDiv = divArray.length, randomDiv
-//     while(currentDiv != 0) {
-//         randomDiv = Math.floor(Math.random() * currentDiv)
-//         currentDiv--;
-//         [divArray[currentDiv],divArray[randomDiv]] = [divArray[randomDiv],divArray[currentDiv]]
-//     }
-//     return divArray
-// }
-
-// let divArray = Array.from(document.querySelectorAll('#shuffle'))
-// shuffle(divArray)
-// console.log(divArray)
-
-
-
-
-
-// let shuffle = () => {
-//     let container = document.querySelector(".card-container")
-//     let elementsArray = Array.prototype.slice.call(container.getElementByClassName('flip-card'))
-//         elementsArray.forEach(function(element) {
-//             container.removeChild(element)
-//     })
-//     shuffleArray(elementsArray)
-//     elementsArray.forEach(function(element) {
-//         container.appendChild(element)
-//     })
-// }
-
-// let shuffleArray = () => {
-//     for (let i = array.length - 1; i > 0; i--) {
-//         let j = Math.floor(Math.random() * (i + 1))
-//         let temp = array[i]
-//         array[i] = array[j]
-//         array[j] = temp
-//     }
-//     return array;
-// }
+// flippedCard()
