@@ -5,13 +5,13 @@ let cards = document.querySelectorAll
 let cardFlipped = false
 let card1 = null
 let card2 = null
-// let stopFlip = false
 
 
 // whenever click event is fired, execute flipCard()
 function flipCard() {
     // console.log('This is working')
     // console.log(this)
+
     // flip the cards using toggle
     this.classList.toggle('flip')
 
@@ -27,6 +27,7 @@ function flipCard() {
         // console.log(card1)
         // console.log(card2)
 
+    // add conditional for card1 and card2 to removeEventListener
     if (card1 != null && card2 != null) {
         cards.forEach((card) => {
             card.removeEventListener('click',flipCard)
@@ -34,7 +35,6 @@ function flipCard() {
         } 
         // need to run check for match
         setTimeout(checkForMatch, 900)
-
     }
 }
 // attach eventListener to each card using forEach
@@ -79,7 +79,7 @@ function shuffle() {
 shuffle()
 
 
-// // let only two cards be flipped over at one time
+
 // keep track of how many cards have been flipped
 // let flippedCard = false -- move up
 
@@ -89,17 +89,6 @@ shuffle()
 //         flipCount++
 //     }
 // }
-
-
-
-// function flippedCard() {
-//     if (flippedCards[0] === flippedCards[1]) {
-//         console.log('You found match')
-//     } else {
-//         console.log('Sorry, try again')
-//     }
-// }
-// flippedCard()
 
 
 // // see if flipped cards are a match
@@ -120,18 +109,19 @@ shuffle()
 // let card1
 // let card2
 
-//need to check if two cards have been clikced before running this function
+// // let only two cards be flipped over at one time
 
-
+// need to pause the flips
 function pauseFlip() {
     cards.forEach((card) => {
         card.addEventListener('click',flipCard)
-})
+    })
 }
 
+// without setTimeout, cards can be clicked more than two in a row, creates bugs
 function checkForMatch() {
-    console.log(card1.dataset.image)
-    console.log(card2.dataset.image)
+    // console.log(card1.dataset.image)
+    // console.log(card2.dataset.image)
     if (card1.dataset.image === card2.dataset.image) {
         disableCards()
         setTimeout(pauseFlip, 1000)
@@ -164,33 +154,28 @@ function unflipCards() {
 }
 
 
-
 // reset
 function resetGame() {
     cardFlipped = false
-    stopFlip = false
     card1 = null
     card2 = null
 }
 
 
+// // shuffle button
+let button = document.getElementById("shuffle-button")
 
+button.addEventListener('click', function() {
+    shuffle(cards)
+}, false)
 
-// // shuffle button shuffles-- got rid of
-// let button = document.querySelector('button') -- move up
-// let button = document.querySelector('button')
+// play again button
+// let resetButton = document.getElementById("reset")
 
-// button.addEventListener('click', function() {
-//     shuffle(cards)
-// }, false)
-
-
-
-// function flippedCard() {
-//     if (cardsInPlay[0] === cardsInPlay[1]) {
-//         console.log('You found match')
-//     } else {
-//         console.log('Sorry, try again')
+// resetButton.addEventListener('click', function() {
+//     for (let i = 0; i < cards.length; i++) {
+//         cardFlipped = false
+//         card1 = null
+//         card2 = null
 //     }
-// }
-// flippedCard()
+// })

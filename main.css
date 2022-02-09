@@ -1,4 +1,3 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); */
 
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 
@@ -9,43 +8,51 @@
 }
 
 body {
-    background-color: white;
+    background-image: url(https://i0.wp.com/windowscustomization.com/wp-content/uploads/2018/08/star-wars.gif?fit=750%2C376&quality=80&strip=all&ssl=1);
+    background-size: cover;
+    /* background-color: white; */
     text-align: center;
     list-style-position: inside;
     font-family: Helvetica, sans-serif;
-    height: 100vh;
+    color: white;
+    /* height: 100vh; */
 }
 
 h1 {
     font-size: 3.5rem;
     /* font-family: 'Press Start 2P', sans-serif; */
     font-family: 'Audiowide', sans-serif;
+    padding: 2rem;
 }
 
 img {
-    width: 30rem;
-    height: 20rem;
+    width: 35rem;
+    height: 25rem;
 }
 
 h2 {
     font-size: 2rem;
     text-decoration: underline;
+    margin: 1rem;
 }
 
 p ul li {
-    font-size: 1rem;
-    font-family: Helvetica, sans-serif
+    font-size: .5rem;
+    font-family: Helvetica, sans-serif;
+    margin-bottom: 2rem;
 }
 
 .card-container {
-    background: blue;
-    width: 640px;
-    height: 640px;
+    background: transparent;
+    width: 900px;
+    height: 550px;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    text-align: center;
     perspective: 1000px;
+    /* overflow: hidden; */
 }
 
 .flip-card {
@@ -65,7 +72,7 @@ p ul li {
     padding: 2px;
     position: absolute;
     border-radius: 5px;
-    background: pink;
+    background: black;
     backface-visibility: hidden;
 }
 
@@ -88,10 +95,6 @@ p ul li {
 
 .flip-card.unmatched {
     backface-visibility: hidden;
-}
-
-.flip-card.disabled {
-    pointer-events: none;
 }
 
 /* get rid of background color later
