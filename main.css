@@ -26,8 +26,8 @@ h1 {
 }
 
 img {
-    width: 35rem;
-    height: 25rem;
+    width: 38rem;
+    height: 21rem;
 }
 
 h2 {
@@ -36,10 +36,36 @@ h2 {
     margin: 1rem;
 }
 
-p ul li {
-    font-size: .5rem;
+p {
+    font-size: 1rem;
     font-family: Helvetica, sans-serif;
-    margin-bottom: 2rem;
+    padding: .3rem;
+}
+
+ul {
+    font-size: 1rem;
+    font-family: Helvetica, sans-serif;
+    padding: .3rem;
+}
+
+li {
+    font-size: 1rem;
+    font-family: Helvetica, sans-serif;
+    padding: .3rem;
+}
+
+.tip {
+    font-size: .8rem;
+    margin-top: 1rem;
+}
+
+.audio-controls {
+    float: right;
+    margin-top: 0;
+    background-color: transparent;
+    width: 250px;
+    height: 10px;
+    border-radius: 50%;
 }
 
 .card-container {
@@ -48,7 +74,7 @@ p ul li {
     height: 550px;
     margin: auto;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap:wrap;
     justify-content: center;
     text-align: center;
     perspective: 1000px;
@@ -58,7 +84,7 @@ p ul li {
 .flip-card {
     display: flex;
     justify-content: center;
-    width: 10.5%;
+    min-width: 10.5%;
     height: 25%;
     margin: 5px;
     position: relative;
@@ -175,7 +201,30 @@ p ul li {
 
 button {
     /* center button */
-    margin: 15px;
+    margin: 1rem;
+    background-color: lightblue;
+    border: dotted solid transparent;
+    color: navy;
+    padding: 10px 24px;
+    text-align: center;
+    font-size: 1rem;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color:navy;
+    color: white;
+}
+
+button:active {
+    background-color: lightblue;
+    transform: translateY(4px);
+    color: navy;
+}
+
+#reset {
+    margin-top: 2rem;
 }
 
 /* stretch goal: makes cards shake if wrong */

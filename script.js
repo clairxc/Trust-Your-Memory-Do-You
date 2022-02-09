@@ -2,10 +2,18 @@
 let cards = document.querySelectorAll
 ('.flip-card')
 
+let flipCount = 0
+
 let cardFlipped = false
 let card1 = null
 let card2 = null
 
+// // shuffle button
+let button = document.getElementById("shuffle-button")
+
+button.addEventListener('click', function() {
+    shuffle(cards)
+}, false)
 
 // whenever click event is fired, execute flipCard()
 function flipCard() {
@@ -37,6 +45,7 @@ function flipCard() {
         setTimeout(checkForMatch, 900)
     }
 }
+
 // attach eventListener to each card using forEach
 cards.forEach((card) => {
     card.addEventListener('click',flipCard)
@@ -136,6 +145,7 @@ function disableCards() {
     card1.removeEventListener('click', flipCard)
     card2.removeEventListener('click', flipCard)
     cardFlipped = false
+    if (flipCount === 32) winner()
     resetGame()
 }
 
@@ -153,6 +163,12 @@ function unflipCards() {
     }, 900)
 }
 
+function announceWin() {
+    if (flipCount === 32) {
+        announceWin.innterText = 'YOU DID IT!!'
+        resetGame()
+    }
+}
 
 // reset
 function resetGame() {
@@ -160,22 +176,18 @@ function resetGame() {
     card1 = null
     card2 = null
 }
+console.log(resetGame)
 
 
-// // shuffle button
-let button = document.getElementById("shuffle-button")
-
-button.addEventListener('click', function() {
-    shuffle(cards)
-}, false)
-
-// play again button
+// reset button
 // let resetButton = document.getElementById("reset")
 
-// resetButton.addEventListener('click', function() {
+// resetButton.addEventListener('click', function())
+
+
+
 //     for (let i = 0; i < cards.length; i++) {
 //         cardFlipped = false
 //         card1 = null
 //         card2 = null
 //     }
-// })

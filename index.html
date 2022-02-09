@@ -8,6 +8,12 @@
     <title>Trust Your Memory Do You?</title>
 </head>
 <body>
+    <div class="audio-controls">
+            <audio controls>
+                <source src="/sound/8d82b5_Star_Wars_Main_Theme_Song.mp3" loop="true" autostart="true" type="audio/mp3">
+            </audio>
+    </div>
+
     <h1>TRUST YOUR MEMORY DO YOU?</h1>
     <div>
         <img src="images/baby-yoda.jpg"/>
@@ -27,9 +33,16 @@
     <p>
         The game continues until all cards have been matched.
     </p>
-    <!-- <div>
-        <button id="shuffle-button">Shuffle to Play!</button>
-    </div> -->
+    <p>
+
+    </p>
+    
+    <div class="tip"> 
+        TIP: can shuffle mid-game if you get frustrated 😬
+    </div>
+    <div>
+        <button id="shuffle-button"> Shuffle! </button>
+    </div>
     
     <div class="card-container">
         <div class="flip-card" data-image="akbar">
@@ -190,11 +203,14 @@
             <img class="back-face" src="images/baby-yoda-card-face.png" alt="card-face">
         </div>        
     </div>
-    
-    <div>
-        <button id="reset">Play Again</button>
-    </div>
 
+    <div>
+        <p class="announceWin">
+        </p>
+    </div>
+    
+    <button onclick="resetGame()" id="reset">Play Again</button>
+    
     <script src="script.js"></script>
 </body>
 </html>
