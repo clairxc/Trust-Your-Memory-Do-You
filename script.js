@@ -2,8 +2,6 @@
 let cards = document.querySelectorAll
 ('.flip-card')
 
-let flipCount = 0
-
 let cardFlipped = false
 let card1 = null
 let card2 = null
@@ -51,33 +49,6 @@ cards.forEach((card) => {
     card.addEventListener('click',flipCard)
 })
 
-
-// // don't let card flip back once flipped
-// function stopFlip() {
-//     this.classList.toggle('disabled')
-// }
-// cards.forEach((card) => {
-//     card.addEventListener('click', stopFlip)
-// })
-
-// create empty Array to hold two chosen cards
-// within click event (flipCard) push event.target.id for the two cards
-// remove event listener
-
-
-// dont let card flip after two cards have been flipped
-// function stopFlip() {
-//     this.classList.toggle('disabled')
-
-//     let len = cards.length
-//     if (len === 2) {
-//         cards.forEach((card) => {
-//             card.removeEventListener('click',flipCard)
-//         })
-//     }
-// }
-
-
 // // shuffle the cards
 function shuffle() {
     cards.forEach((card) => {
@@ -86,37 +57,6 @@ function shuffle() {
     })
 } 
 shuffle()
-
-
-
-// keep track of how many cards have been flipped
-// let flippedCard = false -- move up
-
-// let flipCount = 0
-// function flipCounter () {
-//     if (flipCount < 2) {
-//         flipCount++
-//     }
-// }
-
-
-// // see if flipped cards are a match
-// check if cards are match or not
-// try using .isEqualNode() or data attributes
-// if using data attributes
-// let cards = document.querySelectorAll('.flip-card')
-
-// cards.dataset.image-- correct
-
-// [cards.index.dataImage]
-
-// const cards = document.querySelectorAll('.flip-card')
-// let card1 = document.querySelector('flip-card').isSameNode
-// let card2 = document.querySelector('flip-card').isSameNode
-// let x = card1.isEqualNode(card2)
-
-// let card1
-// let card2
 
 // // let only two cards be flipped over at one time
 
@@ -145,13 +85,11 @@ function disableCards() {
     card1.removeEventListener('click', flipCard)
     card2.removeEventListener('click', flipCard)
     cardFlipped = false
-    // if (flipCount === 32) winner()
-    resetGame()
+    // resetGame()
 }
 
 
 // when cards don't match
-// lockBoard = true -- moveup
 
 // unflip cards if no match
 function unflipCards() {
@@ -159,35 +97,32 @@ function unflipCards() {
     setTimeout(() => {
         card1.classList.remove('flip')
         card2.classList.remove('flip')
-        resetGame()
+        // resetGame()
     }, 900)
 }
 
-function announceWin() {
-    if (flipCount === 32) {
-        announceWin.innterText = 'YOU DID IT!!'
-        resetGame()
-    }
-}
+// function announceWin() {
+//     if (flipCount === 32) {
+//         announceWin.innterText = 'YOU DID IT!!'
+//         resetGame()
+//     }
+// }
 
 // reset
+
 function resetGame() {
+    console.log(`reset button clicked`)
     cardFlipped = false
     card1 = null
     card2 = null
+    let endGame = document.querySelectorAll('.flip')
+        endGame.forEach(card => {
+            card.classList.remove('flip')
+        }) 
+    shuffle()
 }
 
-
 // reset button
-// let resetButton = document.getElementById("reset")
+let resetButton = document.getElementById("reset")
 
-// resetButton.addEventListener('click', function())
-
-
-
-//     for (let i = 0; i < cards.length; i++) {
-//         cardFlipped = false
-//         card1 = null
-//         card2 = null
-//     }
-
+resetButton.addEventListener('click', resetGame)
