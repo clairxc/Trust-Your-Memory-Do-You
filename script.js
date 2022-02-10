@@ -1,4 +1,4 @@
-
+// declare game variables
 let cards = document.querySelectorAll
 ('.flip-card')
 
@@ -6,12 +6,20 @@ let cardFlipped = false
 let card1 = null
 let card2 = null
 
-// // shuffle button
-let button = document.getElementById("shuffle-button")
 
-button.addEventListener('click', function() {
-    shuffle(cards)
-}, false)
+// audio
+let sound = document.querySelector("audio")
+let soundButton = document.querySelector("i")
+
+soundButton.addEventListener('click', () => {
+    if (sound.paused){
+        sound.volume = 0.2      
+        sound.play()
+    } else {
+        sound.pause()
+    }
+})
+
 
 // whenever click event is fired, execute flipCard()
 function flipCard() {
@@ -49,7 +57,8 @@ cards.forEach((card) => {
     card.addEventListener('click',flipCard)
 })
 
-// // shuffle the cards
+
+// shuffle the cards
 function shuffle() {
     cards.forEach((card) => {
         let randomShuffle = Math.floor(Math.random() * 33)
@@ -58,8 +67,16 @@ function shuffle() {
 } 
 shuffle()
 
-// // let only two cards be flipped over at one time
 
+// shuffle button
+let button = document.getElementById("shuffle-button")
+
+button.addEventListener('click', function() {
+    shuffle(cards)
+}, false)
+
+
+// let only two cards be flipped over at one time
 // need to pause the flips
 function pauseFlip() {
     cards.forEach((card) => {
@@ -67,29 +84,28 @@ function pauseFlip() {
     })
 }
 
+
 // without setTimeout, cards can be clicked more than two in a row, creates bugs
 function checkForMatch() {
     // console.log(card1.dataset.image)
     // console.log(card2.dataset.image)
     if (card1.dataset.image === card2.dataset.image) {
         disableCards()
-        setTimeout(pauseFlip, 1000)
+        setTimeout(pauseFlip, 900)
     } else {
         unflipCards()
-        setTimeout(pauseFlip, 1000)
+        setTimeout(pauseFlip, 900)
     }
 }
+
 
 // stop flip if cards are match
 function disableCards() {
     card1.removeEventListener('click', flipCard)
     card2.removeEventListener('click', flipCard)
     cardFlipped = false
-    // resetGame()
 }
 
-
-// when cards don't match
 
 // unflip cards if no match
 function unflipCards() {
@@ -97,21 +113,13 @@ function unflipCards() {
     setTimeout(() => {
         card1.classList.remove('flip')
         card2.classList.remove('flip')
-        // resetGame()
     }, 900)
 }
 
-// function announceWin() {
-//     if (flipCount === 32) {
-//         announceWin.innterText = 'YOU DID IT!!'
-//         resetGame()
-//     }
-// }
 
 // reset
-
 function resetGame() {
-    console.log(`reset button clicked`)
+    // console.log(`reset button clicked`)
     cardFlipped = false
     card1 = null
     card2 = null
@@ -121,6 +129,7 @@ function resetGame() {
         }) 
     shuffle()
 }
+
 
 // reset button
 let resetButton = document.getElementById("reset")
