@@ -145,7 +145,7 @@ function disableCards() {
     card1.removeEventListener('click', flipCard)
     card2.removeEventListener('click', flipCard)
     cardFlipped = false
-    if (flipCount === 32) winner()
+    // if (flipCount === 32) winner()
     resetGame()
 }
 
@@ -176,7 +176,6 @@ function resetGame() {
     card1 = null
     card2 = null
 }
-console.log(resetGame)
 
 
 // reset button
