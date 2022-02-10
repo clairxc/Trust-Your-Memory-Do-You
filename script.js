@@ -191,3 +191,4 @@ console.log(resetGame)
 //         card1 = null
 //         card2 = null
 //     }
+

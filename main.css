@@ -59,15 +59,6 @@ li {
     margin-top: 1rem;
 }
 
-.audio-controls {
-    float: right;
-    margin-top: 0;
-    background-color: transparent;
-    width: 250px;
-    height: 10px;
-    border-radius: 50%;
-}
-
 .card-container {
     background: transparent;
     width: 900px;
