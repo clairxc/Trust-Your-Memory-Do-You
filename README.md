@@ -81,7 +81,7 @@ Instead, tried to implement the below stretch goals:
 - [x] Add background music
     - was originally going to embed it, but bad UX experience/practice, so created the option for the player to turn it on/off
 - [ ] Make page responsive
-    - partially accomplished-- wasn't able to get the divs to automatically push the columns down accordingly when      screen got smaller
+    - partially accomplished-- wasn't able to get the divs to automatically push the columns down accordingly when screen got smaller
 
 
 ## Extras
@@ -100,9 +100,26 @@ Instead, tried to implement the below stretch goals:
 - this favicon: <img width="204" alt="lightsaber-favicon" src="https://user-images.githubusercontent.com/96402339/153528835-20c810bd-5fad-4d2e-9e03-d600fa402eca.png">
 - the background gif (really gave an initially plain game something extra)
 
+
+## Bugs That I Encountered
+- [FIXED] player able to click cards multiple times
+    - used setTimeout to fix this issue
+- [FIXED] player able to flip more than two cards at a time
+    - used setTimeout to fix this issue
+- [FIXED] reset button was flipping a SINGLE card for some reason
+- [FIXED (sort of)] player able to flip already matched cards face down after implementing the reset button
+    - fixed by hiding the cards
+- [FIXED] reset button was console logging twice, when clicked once
+    - was calling it twice
+- [FIXED] background music would sometimes play/not play
+    - fixed by specifying the file path 
+- [ONGOING] card "disappears" when clicked on multiple times rapidly 
+
+
 ## Things I Learned
 I learned that the small things can make a big difference. 
 The tiniest little typo can break your code, while adding the smallest little detail can give your project that little spark.
+
 
 ## Things I Would Do Differently
 - Rewrite my code in a simpler way instead of trying to use new methods I wasn't familiar with (which was good practice and challenging, but melted my brain in the process)
