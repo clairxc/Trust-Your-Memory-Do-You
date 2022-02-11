@@ -125,7 +125,7 @@ The tiniest little typo can break your code, while adding the smallest little de
 
 ## Things I Would Do Differently
 - Rewrite my code in a simpler way instead of trying to use new methods I wasn't familiar with (which was good practice and challenging, but melted my brain in the process)
-
+- Add sound effects every time a match was made (i.e.: when Yoda was matched, there would be a sound effect of Yoda saying "Pass on what you have learned")
 
 ## Credit / Sources
 - W3 Schools
