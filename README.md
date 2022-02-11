@@ -99,7 +99,7 @@ Instead, tried to implement the below stretch goals:
 ## Highlights
 - this favicon: <img width="204" alt="lightsaber-favicon" src="https://user-images.githubusercontent.com/96402339/153528835-20c810bd-5fad-4d2e-9e03-d600fa402eca.png">
 - the background gif (really gave an initially plain game something extra)
-
+<img width="299" alt="background-gif screenshot" src="https://user-images.githubusercontent.com/96402339/153637490-c8cae0e9-665f-4ac1-8f43-fd0ff63138f7.png">
 
 ## Bugs That I Encountered
 - [FIXED] player able to click cards multiple times
