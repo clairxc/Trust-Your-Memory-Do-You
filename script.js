@@ -88,7 +88,7 @@ function checkForMatch() {
     // console.log(card1.dataset.image)
     // console.log(card2.dataset.image)
     if (card1.dataset.image === card2.dataset.image) {
-        disableCards()
+        setTimeout(disableCards,600)
         setTimeout(pauseFlip, 900)
     } else {
         unflipCards()
@@ -99,8 +99,14 @@ function checkForMatch() {
 
 // stop flip if cards are match
 function disableCards() {
-    card1.removeEventListener('click', flipCard)
-    card2.removeEventListener('click', flipCard)
+    // card1.classList.add('blah')
+    // console.log('match removed')
+    // console.log(card1)
+    // console.log(card2)
+    card1.style.visibility = "hidden";
+    card2.style.visibility = "hidden";
+    // card1.removeEventListener('click', flipCard)
+    // card2.removeEventListener('click', flipCard)
     cardFlipped = false
 }
 
@@ -123,13 +129,14 @@ function unflipCards() {
 
 // reset
 function resetGame() {
-    // console.log(`reset button clicked`)
+    console.log(`reset button clicked`)
     cardFlipped = false
     card1 = null
     card2 = null
     let endGame = document.querySelectorAll('.flip')
         endGame.forEach(card => {
             card.classList.remove('flip')
+            card.style.visibility = "visible"
         }) 
     shuffle()
 }
