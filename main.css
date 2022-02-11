@@ -12,17 +12,14 @@
 body {
     background-image: url(https://i0.wp.com/windowscustomization.com/wp-content/uploads/2018/08/star-wars.gif?fit=750%2C376&quality=80&strip=all&ssl=1);
     background-size: cover;
-    /* background-color: white; */
     text-align: center;
     list-style-position: inside;
     font-family: Helvetica, sans-serif;
     color: white;
-    /* height: 100vh; */
 }
 
 h1 {
     font-size: 3.5rem;
-    /* font-family: 'Press Start 2P', sans-serif; */
     font-family: 'Audiowide', sans-serif;
     padding: 2rem;
 }
@@ -57,6 +54,29 @@ li {
     padding: .3rem;
 }
 
+button {
+    background-color: transparent;
+    color: white;
+    padding: 10px;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 1rem;
+    border-radius: 12px;
+    border: 1px dotted;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color:aliceblue;
+    color: black;
+}
+
+button:active {
+    background-image: none;
+    transform: translateY(4px);
+    color: navy;
+}
+
 .tip {
     font-size: .8rem;
     margin-top: 1rem;
@@ -69,16 +89,12 @@ li {
     height: 550px;
     margin: auto;
     display: flex;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
     justify-content: center;
     text-align: center;
     perspective: 1000px;
+    overflow: hidden;
 }
-
-/* @media (max-width: 800px) {
-    .card-container {
-      flex-direction:column
-    } */
 
 .flip-card {
     display: flex;
@@ -112,113 +128,6 @@ li {
 
 .flip-card.flip {
     transform: rotateY(180deg);
-}
-
-/* .card-container .flip-card .match {
-    backface-visibility: visible;
-}
-
-.flip-card.unmatched {
-    backface-visibility: hidden;
-} */
-
-/* get rid of background color later
-.card-container {
-    display: grid;
-    grid-gap: 5px 20px;
-    grid-template-columns: auto auto auto auto auto auto auto auto;
-    background-color: #2196F3;
-    justify-content: center;
-    /* text-align: center;
-    display: inline-block;
-    grid-template-columns: repeat(7, 1fr) minmax(200px, 1fr);
-    overflow: hidden;
-    grid-template-rows: repeat(4, 1fr);
-    grid-gap: 15px; 
-} */
-
-/* .card-container {
-    display: inline-grid;
-    background-color: pink;
-    grid-template-columns:
-    auto auto auto auto auto auto auto auto; 
-    grid-gap: 2rem;
-  } */
-
-/* .flip-card {
-    display: grid;
-    grid-gap: 5px 20px;
-    grid-template-columns: auto auto auto auto auto auto auto auto;
-    height: 100px;
-    width: 80px;
-    border: 2px solid black;
-    background-color: hotpink;
-} */
-
-/* change background color to transparent later
-.flip-card {
-    height: 100px;
-    width: 80px;
-    border: 2px solid black;
-    background-color: transparent;
-    perspective: 1000px;
-    background-image: url("./images/baby-yoda-card-face.png")
-}
-
-.flip-card-outer {
-    position: relative;
-    width: 80px;
-    height: 100px;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-}
-
-.flip-card:hover .flip-card-outer {
-    transform: rotateY(180deg);
-}
-
-.flip-card-front .flip-card-back {
-    position: absolute;
-    width: 80px;
-    height: 100px;
-    backface-visibility: visible;
-}
-
-.flip-card-back {
-    background-color: transparent;
-}
-
-.flip-card-front {
-    background-color: transparent;
-    transform: rotateY(180deg);
-}
-
-#card {
-    width: 80px;
-    height: 100px;
-} */
-
-button {
-    background-color: transparent;
-    color: white;
-    padding: 10px;
-    margin-bottom: 1rem;
-    text-align: center;
-    font-size: 1rem;
-    border-radius: 12px;
-    border: 1px dotted;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color:aliceblue;
-    color: black;
-}
-
-button:active {
-    background-image: none;
-    transform: translateY(4px);
-    color: navy;
 }
 
 #reset {

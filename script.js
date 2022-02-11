@@ -12,7 +12,7 @@ let sound = document.querySelector("audio")
 let soundButton = document.querySelector("i")
 
 soundButton.addEventListener('click', () => {
-    if (sound.paused){
+    if (sound.paused === true){
         sound.volume = 0.2      
         sound.play()
     } else {
@@ -23,10 +23,8 @@ soundButton.addEventListener('click', () => {
 
 // whenever click event is fired, execute flipCard()
 function flipCard() {
-    // console.log('This is working')
-    // console.log(this)
 
-    // flip the cards using toggle
+    // add flip class  using toggle
     this.classList.toggle('flip')
 
     // conditions for card flip
@@ -48,7 +46,7 @@ function flipCard() {
             })
         } 
         // need to run check for match
-        setTimeout(checkForMatch, 900)
+        setTimeout(checkForMatch, 600)
     }
 }
 
@@ -109,12 +107,18 @@ function disableCards() {
 
 // unflip cards if no match
 function unflipCards() {
-    stopFlip = true
     setTimeout(() => {
         card1.classList.remove('flip')
         card2.classList.remove('flip')
-    }, 900)
+    }, 600)
 }
+
+
+// function animateShake() {
+//     if (card2.classList.remove('flip') === true) {
+
+//     } 
+// }
 
 
 // reset
