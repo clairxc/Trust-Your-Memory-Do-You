@@ -24,20 +24,16 @@ soundButton.addEventListener('click', () => {
 // whenever click event is fired, execute flipCard()
 function flipCard() {
 
-    // add flip class  using toggle
+    // add flip class using toggle
     this.classList.toggle('flip')
 
     // conditions for card flip
     if (!cardFlipped) {
         cardFlipped = true
         card1 = this
-        // console.log(cardFlipped)
-        // console.log(card1)
     } else {
         cardFlipped = false
         card2 = this
-        // console.log(card1)
-        // console.log(card2)
 
     // add conditional for card1 and card2 to removeEventListener
     if (card1 != null && card2 != null) {
@@ -83,10 +79,8 @@ function pauseFlip() {
 }
 
 
-// without setTimeout, cards can be clicked more than two in a row, creates bugs
+// without setTimeout, cards can be clicked more than two in a row, creates bug where player can click more than two
 function checkForMatch() {
-    // console.log(card1.dataset.image)
-    // console.log(card2.dataset.image)
     if (card1.dataset.image === card2.dataset.image) {
         setTimeout(disableCards,600)
         setTimeout(pauseFlip, 900)
@@ -99,14 +93,8 @@ function checkForMatch() {
 
 // stop flip if cards are match
 function disableCards() {
-    // card1.classList.add('blah')
-    // console.log('match removed')
-    // console.log(card1)
-    // console.log(card2)
     card1.style.visibility = "hidden";
     card2.style.visibility = "hidden";
-    // card1.removeEventListener('click', flipCard)
-    // card2.removeEventListener('click', flipCard)
     cardFlipped = false
 }
 
@@ -118,13 +106,6 @@ function unflipCards() {
         card2.classList.remove('flip')
     }, 600)
 }
-
-
-// function animateShake() {
-//     if (card2.classList.remove('flip') === true) {
-
-//     } 
-// }
 
 
 // reset
