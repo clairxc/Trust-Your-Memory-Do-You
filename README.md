@@ -51,7 +51,7 @@ Find the pairs of matching cards
 
 ----
 
-
+## Direct Link to Game
 https://clairxc.github.io/Trust-Your-Memory-Do-You/
 
 
@@ -71,7 +71,7 @@ https://clairxc.github.io/Trust-Your-Memory-Do-You/
 
 
 ## Accomplished Stretch Goals
-Actually chose not to tackle most of the original stretch goals as it seemed to not suite the game.
+Actually chose not to tackle most of the original stretch goals as it seemed to not suit the game.
 Didn't realize how difficult a 32-card memory game would be-- takes QUITE a long time to match them all 😓
 Instead, tried to implement the below stretch goals:
 
