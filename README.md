@@ -98,11 +98,14 @@ Instead, tried to implement the below stretch goals:
 
 ## Highlights
 - this favicon: <img width="204" alt="lightsaber-favicon" src="https://user-images.githubusercontent.com/96402339/153528835-20c810bd-5fad-4d2e-9e03-d600fa402eca.png">
-- 
+- the background gif (really gave an initially plain game something extra)
 
 ## Things I Learned
 I learned that the small things can make a big difference. 
 The tiniest little typo can break your code, while adding the smallest little detail can give your project that little spark.
+
+## Things I Would Do Differently
+- Rewrite my code in a simpler way instead of trying to use new methods I wasn't familiar with (which was good practice and challenging, but melted my brain in the process)
 
 
 ## Credit / Sources
